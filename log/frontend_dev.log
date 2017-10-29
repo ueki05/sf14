@@ -28,3 +28,184 @@ Oct 28 14:30:53 symfony [info] {sfWebDebugLogger} Factories 25.98 ms (1)
 Oct 28 14:30:53 symfony [info] {sfWebDebugLogger} Action "default/index" 0.12 ms (1)
 Oct 28 14:30:53 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 8.21 ms (1)
 Oct 28 14:30:53 symfony [info] {sfWebResponse} Send content (30027 o)
+Oct 29 06:43:35 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello/index with parameters array (  'module' => 'Hello',  'action' => 'index',)
+Oct 29 06:43:35 symfony [info] {myUser} Automatic user logout due to timeout
+Oct 29 06:43:35 symfony [info] {myUser} User is not authenticated
+Oct 29 06:43:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 06:43:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 06:43:35 symfony [info] {HelloActions} Call "HelloActions->executeIndex()"
+Oct 29 06:43:35 symfony [info] {HelloActions} Forward to action "default/module"
+Oct 29 06:43:35 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 06:43:35 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 06:43:35 symfony [info] {defaultActions} Call "defaultActions->executeModule()"
+Oct 29 06:43:35 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/moduleSuccess.php"
+Oct 29 06:43:35 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 06:43:35 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 06:43:35 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 06:43:35 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 06:43:35 symfony [info] {sfWebDebugLogger} Configuration 14.56 ms (13)
+Oct 29 06:43:35 symfony [info] {sfWebDebugLogger} Factories 8.25 ms (1)
+Oct 29 06:43:35 symfony [info] {sfWebDebugLogger} Action "Hello/index" 4.61 ms (1)
+Oct 29 06:43:35 symfony [info] {sfWebDebugLogger} Action "default/module" 0.11 ms (1)
+Oct 29 06:43:35 symfony [info] {sfWebDebugLogger} View "Success" for "default/module" 2.91 ms (1)
+Oct 29 06:43:35 symfony [info] {sfWebResponse} Send content (32774 o)
+Oct 29 06:52:15 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello/World with parameters array (  'module' => 'Hello',  'action' => 'World',)
+Oct 29 06:52:15 symfony [info] {sfFrontWebController} Action "Hello/World" does not exist
+Oct 29 06:52:15 symfony [err] {sfError404Exception} Action "Hello/World" does not exist.
+Oct 29 06:52:15 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 29 06:52:15 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 06:52:15 symfony [info] {sfWebDebugLogger} Configuration 0.40 ms (5)
+Oct 29 06:52:15 symfony [info] {sfWebDebugLogger} Factories 4.30 ms (1)
+Oct 29 06:53:51 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello/World with parameters array (  'module' => 'Hello',  'action' => 'World',)
+Oct 29 06:53:51 symfony [info] {sfFrontWebController} Action "Hello/World" does not exist
+Oct 29 06:53:51 symfony [err] {sfError404Exception} Action "Hello/World" does not exist.
+Oct 29 06:53:51 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Oct 29 06:53:51 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 06:53:51 symfony [info] {sfWebDebugLogger} Configuration 0.39 ms (5)
+Oct 29 06:53:51 symfony [info] {sfWebDebugLogger} Factories 7.45 ms (1)
+Oct 29 06:54:07 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello/World with parameters array (  'module' => 'Hello',  'action' => 'World',)
+Oct 29 06:54:07 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 06:54:07 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 06:54:07 symfony [info] {HelloActions} Call "HelloActions->executeWorld()"
+Oct 29 06:54:07 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/modules/Hello/templates/WorldSuccess.php"
+Oct 29 06:54:07 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:54:07 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:54:07 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 06:54:07 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 06:54:07 symfony [info] {sfWebDebugLogger} Configuration 5.46 ms (10)
+Oct 29 06:54:07 symfony [info] {sfWebDebugLogger} Factories 6.86 ms (1)
+Oct 29 06:54:07 symfony [info] {sfWebDebugLogger} Action "Hello/World" 0.11 ms (1)
+Oct 29 06:54:07 symfony [info] {sfWebDebugLogger} View "Success" for "Hello/World" 8.19 ms (1)
+Oct 29 06:54:07 symfony [info] {sfWebResponse} Send content (28367 o)
+Oct 29 06:58:24 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello/World with parameters array (  'module' => 'Hello',  'action' => 'World',)
+Oct 29 06:58:24 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 06:58:24 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 06:58:24 symfony [info] {HelloActions} Call "HelloActions->executeWorld()"
+Oct 29 06:58:24 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/modules/Hello/templates/WorldSuccess.php"
+Oct 29 06:58:24 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:58:24 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:58:24 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 06:58:24 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 06:58:24 symfony [info] {sfWebDebugLogger} Configuration 0.93 ms (9)
+Oct 29 06:58:24 symfony [info] {sfWebDebugLogger} Factories 4.06 ms (1)
+Oct 29 06:58:24 symfony [info] {sfWebDebugLogger} Action "Hello/World" 0.12 ms (1)
+Oct 29 06:58:24 symfony [info] {sfWebDebugLogger} View "Success" for "Hello/World" 3.50 ms (1)
+Oct 29 06:58:24 symfony [info] {sfWebResponse} Send content (28367 o)
+Oct 29 06:59:52 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello/World with parameters array (  'module' => 'Hello',  'action' => 'World',)
+Oct 29 06:59:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 06:59:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 06:59:52 symfony [info] {HelloActions} Call "HelloActions->executeWorld()"
+Oct 29 06:59:52 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/modules/Hello/templates/WorldSuccess.php"
+Oct 29 06:59:52 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:59:52 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:59:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 06:59:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 06:59:52 symfony [info] {sfWebDebugLogger} Configuration 0.62 ms (9)
+Oct 29 06:59:52 symfony [info] {sfWebDebugLogger} Factories 6.22 ms (1)
+Oct 29 06:59:52 symfony [info] {sfWebDebugLogger} Action "Hello/World" 0.12 ms (1)
+Oct 29 06:59:52 symfony [info] {sfWebDebugLogger} View "Success" for "Hello/World" 2.34 ms (1)
+Oct 29 06:59:52 symfony [info] {sfWebResponse} Send content (28367 o)
+Oct 29 06:59:55 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello/Japanese with parameters array (  'module' => 'Hello',  'action' => 'Japanese',)
+Oct 29 06:59:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 06:59:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 06:59:55 symfony [info] {HelloActions} Call "HelloActions->executeJapanese()"
+Oct 29 06:59:55 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/modules/Hello/templates/JapaneseSuccess.php"
+Oct 29 06:59:55 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:59:55 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 06:59:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 06:59:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 06:59:55 symfony [info] {sfWebDebugLogger} Configuration 0.69 ms (9)
+Oct 29 06:59:55 symfony [info] {sfWebDebugLogger} Factories 4.26 ms (1)
+Oct 29 06:59:55 symfony [info] {sfWebDebugLogger} Action "Hello/Japanese" 0.19 ms (1)
+Oct 29 06:59:55 symfony [info] {sfWebDebugLogger} View "Success" for "Hello/Japanese" 3.77 ms (1)
+Oct 29 06:59:55 symfony [info] {sfWebResponse} Send content (28364 o)
+Oct 29 07:00:38 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /Hello2 with parameters array (  'module' => 'Hello2',  'action' => 'index',)
+Oct 29 07:00:38 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:00:38 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:00:38 symfony [info] {Hello2Actions} Call "Hello2Actions->executeIndex()"
+Oct 29 07:00:38 symfony [info] {Hello2Actions} Forward to action "default/module"
+Oct 29 07:00:38 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:00:38 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:00:38 symfony [info] {defaultActions} Call "defaultActions->executeModule()"
+Oct 29 07:00:38 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/moduleSuccess.php"
+Oct 29 07:00:38 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:00:38 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:00:38 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 07:00:38 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 07:00:38 symfony [info] {sfWebDebugLogger} Configuration 7.81 ms (13)
+Oct 29 07:00:38 symfony [info] {sfWebDebugLogger} Factories 7.87 ms (1)
+Oct 29 07:00:38 symfony [info] {sfWebDebugLogger} Action "Hello2/index" 4.30 ms (1)
+Oct 29 07:00:38 symfony [info] {sfWebDebugLogger} Action "default/module" 0.10 ms (1)
+Oct 29 07:00:38 symfony [info] {sfWebDebugLogger} View "Success" for "default/module" 2.56 ms (1)
+Oct 29 07:00:38 symfony [info] {sfWebResponse} Send content (32033 o)
+Oct 29 07:00:50 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello2/Index with parameters array (  'module' => 'Hello2',  'action' => 'Index',)
+Oct 29 07:00:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:00:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:00:50 symfony [info] {Hello2Actions} Call "Hello2Actions->executeIndex()"
+Oct 29 07:00:50 symfony [info] {Hello2Actions} Forward to action "default/module"
+Oct 29 07:00:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:00:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:00:50 symfony [info] {defaultActions} Call "defaultActions->executeModule()"
+Oct 29 07:00:50 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/moduleSuccess.php"
+Oct 29 07:00:50 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:00:50 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:00:50 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 07:00:50 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 07:00:50 symfony [info] {sfWebDebugLogger} Configuration 0.87 ms (12)
+Oct 29 07:00:50 symfony [info] {sfWebDebugLogger} Factories 2.99 ms (1)
+Oct 29 07:00:50 symfony [info] {sfWebDebugLogger} Action "Hello2/Index" 5.01 ms (1)
+Oct 29 07:00:50 symfony [info] {sfWebDebugLogger} Action "default/module" 0.11 ms (1)
+Oct 29 07:00:50 symfony [info] {sfWebDebugLogger} View "Success" for "default/module" 3.25 ms (1)
+Oct 29 07:00:50 symfony [info] {sfWebResponse} Send content (32067 o)
+Oct 29 07:01:19 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello2/Index with parameters array (  'module' => 'Hello2',  'action' => 'Index',)
+Oct 29 07:01:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:01:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:01:19 symfony [info] {Hello2Actions} Call "Hello2Actions->executeIndex()"
+Oct 29 07:01:19 symfony [info] {Hello2Actions} Forward to action "default/module"
+Oct 29 07:01:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:01:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:01:19 symfony [info] {defaultActions} Call "defaultActions->executeModule()"
+Oct 29 07:01:19 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/moduleSuccess.php"
+Oct 29 07:01:19 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:01:19 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:01:19 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 07:01:19 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 07:01:19 symfony [info] {sfWebDebugLogger} Configuration 0.69 ms (12)
+Oct 29 07:01:19 symfony [info] {sfWebDebugLogger} Factories 4.11 ms (1)
+Oct 29 07:01:19 symfony [info] {sfWebDebugLogger} Action "Hello2/Index" 3.34 ms (1)
+Oct 29 07:01:19 symfony [info] {sfWebDebugLogger} Action "default/module" 0.10 ms (1)
+Oct 29 07:01:19 symfony [info] {sfWebDebugLogger} View "Success" for "default/module" 1.88 ms (1)
+Oct 29 07:01:19 symfony [info] {sfWebResponse} Send content (32098 o)
+Oct 29 07:01:21 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello2/Index with parameters array (  'module' => 'Hello2',  'action' => 'Index',)
+Oct 29 07:01:21 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:01:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:01:21 symfony [info] {Hello2Actions} Call "Hello2Actions->executeIndex()"
+Oct 29 07:01:21 symfony [info] {Hello2Actions} Forward to action "default/module"
+Oct 29 07:01:21 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:01:21 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:01:21 symfony [info] {defaultActions} Call "defaultActions->executeModule()"
+Oct 29 07:01:21 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/moduleSuccess.php"
+Oct 29 07:01:21 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:01:21 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/lib/vendor/symfony/lib/controller/default/templates/defaultLayout.php"
+Oct 29 07:01:21 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 07:01:21 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 07:01:21 symfony [info] {sfWebDebugLogger} Configuration 0.69 ms (12)
+Oct 29 07:01:21 symfony [info] {sfWebDebugLogger} Factories 3.27 ms (1)
+Oct 29 07:01:21 symfony [info] {sfWebDebugLogger} Action "Hello2/Index" 3.76 ms (1)
+Oct 29 07:01:21 symfony [info] {sfWebDebugLogger} Action "default/module" 0.11 ms (1)
+Oct 29 07:01:21 symfony [info] {sfWebDebugLogger} View "Success" for "default/module" 2.07 ms (1)
+Oct 29 07:01:21 symfony [info] {sfWebResponse} Send content (32119 o)
+Oct 29 07:01:39 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Hello2/Index with parameters array (  'module' => 'Hello2',  'action' => 'Index',)
+Oct 29 07:01:39 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 29 07:01:39 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 29 07:01:39 symfony [info] {Hello2Actions} Call "Hello2Actions->executeIndex()"
+Oct 29 07:01:39 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/modules/Hello2/templates/IndexSuccess.php"
+Oct 29 07:01:39 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 07:01:39 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 29 07:01:39 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 29 07:01:39 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 29 07:01:39 symfony [info] {sfWebDebugLogger} Configuration 3.67 ms (10)
+Oct 29 07:01:39 symfony [info] {sfWebDebugLogger} Factories 6.60 ms (1)
+Oct 29 07:01:39 symfony [info] {sfWebDebugLogger} Action "Hello2/Index" 0.13 ms (1)
+Oct 29 07:01:39 symfony [info] {sfWebDebugLogger} View "Success" for "Hello2/Index" 6.08 ms (1)
+Oct 29 07:01:39 symfony [info] {sfWebResponse} Send content (28376 o)

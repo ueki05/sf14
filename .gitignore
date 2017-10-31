@@ -1,0 +1,17 @@
+config/databases.yml
+apps/erp/config/factories.yml
+.buildpath
+.project
+.settings
+.idea
+.DS_Store
+.rsync_cache
+catalog.xml
+config/databases.yml
+
+log/*
+cache/*
+web/uploads
+web/pdf_files
+web/knp_sn*
+data/sql/*.sql

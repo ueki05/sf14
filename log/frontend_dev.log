@@ -209,3 +209,20 @@ Oct 29 07:01:39 symfony [info] {sfWebDebugLogger} Factories 6.60 ms (1)
 Oct 29 07:01:39 symfony [info] {sfWebDebugLogger} Action "Hello2/Index" 0.13 ms (1)
 Oct 29 07:01:39 symfony [info] {sfWebDebugLogger} View "Success" for "Hello2/Index" 6.08 ms (1)
 Oct 29 07:01:39 symfony [info] {sfWebResponse} Send content (28376 o)
+Oct 31 17:31:03 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /Page/Show with parameters array (  'module' => 'Page',  'action' => 'Show',)
+Oct 31 17:31:03 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Oct 31 17:31:03 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Oct 31 17:31:03 symfony [info] {PageActions} Call "PageActions->executeShow()"
+Oct 31 17:31:03 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Oct 31 17:31:03 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.title AS p__title, p.body AS p__body, p.category AS p__category, p.created_at AS p__created_at, p.updated_at AS p__updated_at, p.slug AS p__slug FROM page p WHERE (p.slug = ?) LIMIT 1 - (top)
+Oct 31 17:31:03 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/modules/Page/templates/ShowSuccess.php"
+Oct 31 17:31:03 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 31 17:31:03 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/sf14/apps/frontend/templates/layout.php"
+Oct 31 17:31:03 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Oct 31 17:31:03 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Oct 31 17:31:03 symfony [info] {sfWebDebugLogger} Configuration 7.49 ms (10)
+Oct 31 17:31:03 symfony [info] {sfWebDebugLogger} Factories 4.06 ms (1)
+Oct 31 17:31:03 symfony [info] {sfWebDebugLogger} Action "Page/Show" 40.69 ms (1)
+Oct 31 17:31:03 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.97 ms (2)
+Oct 31 17:31:03 symfony [info] {sfWebDebugLogger} View "Success" for "Page/Show" 5.15 ms (1)
+Oct 31 17:31:03 symfony [info] {sfWebResponse} Send content (31985 o)

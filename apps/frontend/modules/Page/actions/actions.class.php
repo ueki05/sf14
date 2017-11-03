@@ -22,6 +22,7 @@ class PageActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->page = PageTable::getInstance()->findOneBySlug('top');
+    $slug = $request->getParameter('slug');
+    $this->page = PageTable::getInstance()->findOneBySlug($slug);
   }
 }

@@ -1,6 +1,10 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+page_show:
+  url:    /page/:slug
+  param:  { module: Page, action: Show }
+
 # default rules
 homepage:
   url:   /

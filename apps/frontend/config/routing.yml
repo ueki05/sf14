@@ -13,3 +13,7 @@ news_list:
 news_show:
   url:    /news/:slug
   param:  { module: Page, action: NewsShow }
+
+inquiry_new:
+  url:    /inquiry/new
+  param:  { module: Inquiry, action: New }

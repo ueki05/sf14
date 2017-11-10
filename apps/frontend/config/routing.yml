@@ -17,3 +17,7 @@ news_show:
 inquiry_new:
   url:    /inquiry/new
   param:  { module: Inquiry, action: New }
+
+inquiry_complete:
+  url:    /inquiry/complete
+  param:  { module: Inquiry, action: Complete }

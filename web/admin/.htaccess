@@ -19,4 +19,9 @@ Options +FollowSymLinks +ExecCGI
 
   # no, so we redirect to our front web controller
   RewriteRule ^(.*)$ index.php [QSA,L]
+
+  AuthType      Basic
+  AuthName      "SymfonyBand Admin"
+  AuthUserFile  /var/www/symfony-band-etc/.htpasswd
+  Require       valid-user
 </IfModule>

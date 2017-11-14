@@ -16,4 +16,12 @@ class PageTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Page');
     }
+
+    public static function queryLatestNews()
+    {
+      return self::getInstance()->createQuery()
+        ->from('Page p')
+        ->where('p.category = ?', 'news')
+        ;
+    }
 }

@@ -34,6 +34,10 @@ class PageActions extends sfActions
 
   public function executeNewsList(sfWebRequest $request)
   {
-    $this->pageList = PageTable::getInstance()->findByCategory('news');
+    $pager = new sfDoctrinePager('Page', 999);
+    $pager->setQuery(PageTable::queryLatestNews());
+    $pager->setPage(1);
+    $pager->init();
+    $this->pager = $pager;
   }
 }

@@ -15,3 +15,16 @@ Page:
       type:     string(32)
       notnull:  true
       default:  ''
+
+Article:
+  actAs:
+    Timestampable: ~
+  columns:
+    title:
+      type: string(255)
+      notnull:  true
+    body:
+      type: string(3000)
+      notnull:  true
+    published_at:
+      type: timestamp

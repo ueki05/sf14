@@ -30,3 +30,7 @@ doctrine_create:
   url:    /doctrine/create
   param:  { module: Doctrine, action: create }
 
+doctrine_update:
+  url:    /doctrine/update
+  param:  { module: Doctrine, action: update }
+

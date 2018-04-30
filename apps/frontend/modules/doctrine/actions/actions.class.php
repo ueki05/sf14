@@ -31,6 +31,13 @@ class doctrineActions extends sfActions
     $article->save();
   }
 
+  public function executeUpdate(sfWebRequest $request)
+  {
+    $article = ArticleTable::getInstance()->find(1);
+    $article->setPublishedAt(null);
+    $article->save();
+  }
+
   private function makeRandStr($length) {
     $str = array_merge(range('a', 'z'), range('0', '9'), range('A', 'Z'));
     $r_str = null;

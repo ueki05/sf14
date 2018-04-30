@@ -21,3 +21,12 @@ inquiry_new:
 inquiry_complete:
   url:    /inquiry/complete
   param:  { module: Inquiry, action: Complete }
+
+doctrine_show:
+  url:    /doctrine
+  param:  { module: Doctrine, action: Index }
+
+doctrine_create:
+  url:    /doctrine/create
+  param:  { module: Doctrine, action: create }
+

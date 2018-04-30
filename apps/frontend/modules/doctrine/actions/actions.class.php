@@ -17,6 +17,26 @@ class doctrineActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+  }
+
+  public function executeCreate(sfWebRequest $request)
+  {
+    // レコードクラスを使った保存の例
+    $article = new Article();
+    $article->setTitle($this->makeRandStr(10));
+    $article->setBody($this->makeRandStr(100));
+    $article->setPublishedAt(date('Y-m-d H:m:s'));
+
+    // save()メソッドを呼び出して保存
+    $article->save();
+  }
+
+  private function makeRandStr($length) {
+    $str = array_merge(range('a', 'z'), range('0', '9'), range('A', 'Z'));
+    $r_str = null;
+    for ($i = 0; $i < $length; $i++) {
+      $r_str .= $str[rand(0, count($str) - 1)];
+    }
+    return $r_str;
   }
 }

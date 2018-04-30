@@ -33,9 +33,17 @@ class doctrineActions extends sfActions
 
   public function executeUpdate(sfWebRequest $request)
   {
+    // レコードクラスを使った更新の例
     $article = ArticleTable::getInstance()->find(1);
     $article->setPublishedAt(null);
     $article->save();
+  }
+
+  public function executeDelete(sfWebRequest $request)
+  {
+    // レコードクラスを使った削除の例
+    $article = ArticleTable::getInstance()->find(1);
+    $article->delete();
   }
 
   private function makeRandStr($length) {

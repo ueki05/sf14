@@ -34,3 +34,7 @@ doctrine_update:
   url:    /doctrine/update
   param:  { module: Doctrine, action: update }
 
+doctrine_delete:
+  url:    /doctrine/delete
+  param:  { module: Doctrine, action: delete }
+

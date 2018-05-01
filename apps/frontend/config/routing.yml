@@ -42,3 +42,7 @@ doctrine_find:
   url:    /doctrine/find
   param:  { module: Doctrine, action: find }
 
+doctrine_doctrine_query:
+  url:    /doctrine/doctrine_query
+  param:  { module: Doctrine, action: DoctrineQuery }
+

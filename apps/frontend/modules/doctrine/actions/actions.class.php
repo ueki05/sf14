@@ -93,4 +93,24 @@ class doctrineActions extends sfActions
       }
     }
   }
+
+  public function executeDoctrineQuery(sfWebRequest $request)
+  {
+    // Doctrine_Queryでクエリーを組み立てる例
+    $q = Doctrine_Query::create()
+      ->from('Article a')
+      ->where('a.title LIKE ?', '%Article%')
+      ->andwhere('a.published_at IS NOT NULL')
+      ->orderBy('a.published_at DESC')
+      ->limit(10);
+
+    $articles = $q->execute();
+
+    if (count($articles) > 0) {
+      foreach ($articles as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+  }
 }

@@ -38,3 +38,7 @@ doctrine_delete:
   url:    /doctrine/delete
   param:  { module: Doctrine, action: delete }
 
+doctrine_find:
+  url:    /doctrine/find
+  param:  { module: Doctrine, action: find }
+

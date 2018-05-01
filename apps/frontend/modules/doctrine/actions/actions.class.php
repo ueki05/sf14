@@ -54,4 +54,43 @@ class doctrineActions extends sfActions
     }
     return $r_str;
   }
+
+  public function executeFind(sfWebRequest $request)
+  {
+    // find()メソッドの使用例
+    $article1 = ArticleTable::getInstance()->find(2);
+    echo $article1->getTitle(), PHP_EOL;
+
+    // findAll()メソッドの使用例
+    $articles1 = ArticleTable::getInstance()->findAll();
+    if (count($articles1) > 0) {
+      foreach ($articles1 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    // findBy()メソッドの使用例
+    $articles2 = ArticleTable::getInstance()->findBy('created_at', '2018-04-29 18:37:35');
+    if (count($articles2) > 0) {
+      foreach ($articles2 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    // findOneBy()メソッドの使用例
+    $article2 = ArticleTable::getInstance()->findOneBy('title', 'Article 2');
+    echo $article2->getTitle(), PHP_EOL;
+
+    // マジックファインダの使用例
+    $article3 = ArticleTable::getInstance()->findOneByTitle('Article 2');
+    echo $article3->getTitle(), PHP_EOL;
+
+    // マジックファインダによる複数カラムの条件指定の例
+    $articles3 = ArticleTable::getInstance()->findByTitleOrCreatedAt('Article 2', '2018-04-29 18:37:35');
+    if (count($articles3) > 0) {
+      foreach ($articles3 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+  }
 }

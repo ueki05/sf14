@@ -112,5 +112,68 @@ class doctrineActions extends sfActions
       }
     }
 
+    // テーブルクラスから基本となるクエリーオブジェクトを取得する例
+    $q2 = ArticleTable::getInstance()->createQuery('a');
+
+    $articles2 = $q2->execute();
+
+    if (count($articles2) > 0) {
+      foreach ($articles2 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    // クエリーのFROMを指定する例
+    $q3 = Doctrine_Query::create()
+      ->from('Article a');
+
+    $articles3 = $q3->execute();
+
+    if (count($articles3) > 0) {
+      foreach ($articles3 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    // クエリーのSELECTを指定する例
+    $q4 = Doctrine_Query::create()
+      ->select('a.title, a.body, a.published_at')
+      ->addSelect('a.created_at, a.updated_at') // 2回selectを使うと上書きされる
+      ->from('Article a');
+
+    $articles4 = $q4->execute();
+
+    if (count($articles4) > 0) {
+      foreach ($articles4 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    // クエリーのWHEREを指定する例
+    $q5 = Doctrine_Query::create()
+      ->from('Article a')
+      ->where('(a.title LIKE ? OR a.body LIKE ?)', array('%Article%', 'Body'))
+      ->andWhere('a.published_at IS NOT NULL');
+
+    $articles5 = $q5->execute();
+
+    if (count($articles5) > 0) {
+      foreach ($articles5 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    // クエリーでINを使う例
+    $q6 = Doctrine_Query::create()
+      ->from('Article a')
+      ->whereIn('a.id', array(2, 3, 4));
+
+    $articles6 = $q6->execute();
+
+    if (count($articles6) > 0) {
+      foreach ($articles6 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
   }
 }

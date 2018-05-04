@@ -97,6 +97,7 @@ class doctrineActions extends sfActions
   public function executeDoctrineQuery(sfWebRequest $request)
   {
     // Doctrine_Queryでクエリーを組み立てる例
+    echo 'Doctrine_Queryでクエリーを組み立てる例' . nl2br("\n");
     $q = Doctrine_Query::create()
       ->from('Article a')
       ->where('a.title LIKE ?', '%Article%')
@@ -111,8 +112,10 @@ class doctrineActions extends sfActions
         echo $article->getTitle(), PHP_EOL;
       }
     }
+    echo nl2br("\n");
 
     // テーブルクラスから基本となるクエリーオブジェクトを取得する例
+    echo 'テーブルクラスから基本となるクエリーオブジェクトを取得する例' . nl2br("\n");
     $q2 = ArticleTable::getInstance()->createQuery('a');
 
     $articles2 = $q2->execute();
@@ -122,8 +125,10 @@ class doctrineActions extends sfActions
         echo $article->getTitle(), PHP_EOL;
       }
     }
+    echo nl2br("\n");
 
     // クエリーのFROMを指定する例
+    echo 'クエリーのFROMを指定する例' . nl2br("\n");
     $q3 = Doctrine_Query::create()
       ->from('Article a');
 
@@ -134,8 +139,10 @@ class doctrineActions extends sfActions
         echo $article->getTitle(), PHP_EOL;
       }
     }
+    echo nl2br("\n");
 
     // クエリーのSELECTを指定する例
+    echo 'クエリーのSELECTを指定する例' . nl2br("\n");
     $q4 = Doctrine_Query::create()
       ->select('a.title, a.body, a.published_at')
       ->addSelect('a.created_at, a.updated_at') // 2回selectを使うと上書きされる
@@ -148,8 +155,10 @@ class doctrineActions extends sfActions
         echo $article->getTitle(), PHP_EOL;
       }
     }
+    echo nl2br("\n");
 
     // クエリーのWHEREを指定する例
+    echo 'クエリーのWHEREを指定する例' . nl2br("\n");
     $q5 = Doctrine_Query::create()
       ->from('Article a')
       ->where('(a.title LIKE ? OR a.body LIKE ?)', array('%Article%', 'Body'))
@@ -162,8 +171,10 @@ class doctrineActions extends sfActions
         echo $article->getTitle(), PHP_EOL;
       }
     }
+    echo nl2br("\n");
 
     // クエリーでINを使う例
+    echo 'クエリーでINを使う例' . nl2br("\n");
     $q6 = Doctrine_Query::create()
       ->from('Article a')
       ->whereIn('a.id', array(2, 3, 4));
@@ -175,5 +186,53 @@ class doctrineActions extends sfActions
         echo $article->getTitle(), PHP_EOL;
       }
     }
+    echo nl2br("\n");
+
+    // 複数のORDEB BYを指定する例
+    echo '複数のORDEB BYを指定する例' . nl2br("\n");
+    $q7 = Doctrine_Query::create()
+      ->from('Article a')
+      ->orderBy('a.published_at DESC')
+      ->addOrderBy('a.id');
+
+    $articles7 = $q7->execute();
+
+    if (count($articles7) > 0) {
+      foreach ($articles7 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+    echo nl2br("\n");
+
+    // ORDER BY RAND()を使ってランダムにソートする例
+    echo 'ORDER BY RAND()を使ってランダムにソートする例' . nl2br("\n");
+    $q8 = Doctrine_Query::create()
+      ->from('Article a')
+      ->orderBy('rand()');
+
+    $articles8 = $q8->execute();
+
+    if (count($articles8) > 0) {
+      foreach ($articles8 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+    echo nl2br("\n");
+
+    // LIMIT, OFFSETの使用例
+    echo 'LIMIT, OFFSETの使用例' . nl2br("\n");
+    $q9 = Doctrine_Query::create()
+      ->from('Article a')
+      ->limit(1)
+      ->offset(2);
+
+    $articles9 = $q9->execute();
+
+    if (count($articles9) > 0) {
+      foreach ($articles9 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+    echo nl2br("\n");
   }
 }

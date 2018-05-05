@@ -259,5 +259,42 @@ class doctrineActions extends sfActions
     echo $count, PHP_EOL;
 
     echo nl2br("\n");
+
+    // 6-2-6 カスタムファインダメソッド
+    echo '6-2-6 カスタムファインダメソッド' . nl2br("\n");
+
+    // ArticleTablesクラスにレコード取得用のメソッドを定義
+    echo 'ArticleTablesクラスにレコード取得用のメソッドを定義' . nl2br("\n");
+    $articles12 = ArticleTable::getInstance()->findAllPublishedArticles();
+
+    if (count($articles12) > 0) {
+      foreach ($articles12 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    echo nl2br("\n");
+
+    $article13 = ArticleTable::getInstance()->findPublishedArticleById(2);
+    echo $article13->getTitle(), PHP_EOL;
+
+    echo nl2br("\n");
+
+    // 特定の条件のクエリーパーツを生成するメソッドを定義した例
+    echo '特定の条件のクエリーパーツを生成するメソッドを定義した例' . nl2br("\n");
+    $articles14 = ArticleTable::getInstance()->findAllPublishedArticles2();
+
+    if (count($articles14) > 0) {
+      foreach ($articles14 as $article) {
+        echo $article->getTitle(), PHP_EOL;
+      }
+    }
+
+    echo nl2br("\n");
+
+    $article15 = ArticleTable::getInstance()->findPublishedArticleById2(2);
+    echo $article15->getTitle(), PHP_EOL;
+
+    echo nl2br("\n");
   }
 }

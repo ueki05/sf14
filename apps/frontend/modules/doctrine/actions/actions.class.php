@@ -234,5 +234,30 @@ class doctrineActions extends sfActions
       }
     }
     echo nl2br("\n");
+
+    // Doctrine_Queryでクエリーを実行
+    echo 'Doctrine_Queryでクエリーを実行' . nl2br("\n");
+    $q10 = Doctrine_Query::create()
+      ->from('Article a')
+      ->andWhere('a.published_at IS NOT NULL')
+      ->limit(1);
+
+    $article10 = $q10->fetchOne();
+    // fetchArray()を使えばオブジェクトでなくArrayで取得できる
+    // オブジェクトとして取得する必要がないケースや、どうしてもパフォーマンスを向上させたい場合に使える
+    echo $article10->getId(), PHP_EOL;
+
+    echo nl2br("\n");
+
+    // COUNTの取得
+    echo 'COUNTの取得' . nl2br("\n");
+    $q11 = Doctrine_Query::create()
+      ->from('Article a')
+      ->andWhere('a.published_at IS NOT NULL');
+
+    $count = $q11->count();
+    echo $count, PHP_EOL;
+
+    echo nl2br("\n");
   }
 }

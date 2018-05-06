@@ -296,5 +296,14 @@ class doctrineActions extends sfActions
     echo $article15->getTitle(), PHP_EOL;
 
     echo nl2br("\n");
+
+    // UPDATEクエリーの例
+    Doctrine_Query::create()
+      ->update('Article')
+      ->set('title', "REPLACE(title, 'titlle1', 'title1')")
+      ->where('title LIKE ?', '%titlle%')
+      ->execute();
+
+    // set()メソッドでプレースホルダを使う例
   }
 }

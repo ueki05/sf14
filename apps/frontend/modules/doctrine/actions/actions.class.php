@@ -298,12 +298,24 @@ class doctrineActions extends sfActions
     echo nl2br("\n");
 
     // UPDATEクエリーの例
+    // Doctrine_Query::create()
+    //   ->update('Article')
+    //   ->set('title', "REPLACE('titlle', 'title')")
+    //   ->where('title LIKE ?', '%titlle%')
+    //   ->execute();
+
+    // set()メソッドでプレースホルダを使う例
     Doctrine_Query::create()
       ->update('Article')
-      ->set('title', "REPLACE(title, 'titlle1', 'title1')")
+      ->set('title', '?', "title")
       ->where('title LIKE ?', '%titlle%')
       ->execute();
 
-    // set()メソッドでプレースホルダを使う例
+    // DELETEクエリーの例
+    Doctrine_Query::create()
+      ->delete()
+      ->from('Article a')
+      ->where('a.published_at < ?', '2018-04-30 00:00:00')
+      ->execute();
   }
 }

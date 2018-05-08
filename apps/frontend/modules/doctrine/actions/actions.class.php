@@ -317,5 +317,8 @@ class doctrineActions extends sfActions
       ->from('Article a')
       ->where('a.published_at < ?', '2018-04-30 00:00:00')
       ->execute();
+
+    // 6-2-9 ハイドレーション
+    // 本には具体例が無いので、調べて少し載せる
   }
 }

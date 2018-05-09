@@ -276,9 +276,10 @@ class doctrineActions extends sfActions
     echo nl2br("\n");
 
     $article13 = ArticleTable::getInstance()->findPublishedArticleById(2);
-    echo $article13->getTitle(), PHP_EOL;
-
-    echo nl2br("\n");
+    if ($article13) {
+      echo $article13->getTitle(), PHP_EOL;
+      echo nl2br("\n");
+    }
 
     // 特定の条件のクエリーパーツを生成するメソッドを定義した例
     echo '特定の条件のクエリーパーツを生成するメソッドを定義した例' . nl2br("\n");
@@ -293,9 +294,10 @@ class doctrineActions extends sfActions
     echo nl2br("\n");
 
     $article15 = ArticleTable::getInstance()->findPublishedArticleById2(2);
-    echo $article15->getTitle(), PHP_EOL;
-
-    echo nl2br("\n");
+    if ($article15) {
+      echo $article15->getTitle(), PHP_EOL;
+      echo nl2br("\n");
+    }
 
     // UPDATEクエリーの例
     // Doctrine_Query::create()
@@ -331,5 +333,45 @@ class doctrineActions extends sfActions
     //   そのままの値
     //   PDO::FETCH_NUM
     // 他にもいくらかあるけど、fetchArrayとかがおそらくHYDRAte_ARRAYで返してくれてる
+
+    // 6-2-10 Doctrine_Connectionからの操作
+    // 接続オブジェクトを取得する
+
+    // モデルで使っている接続オブジェクトを取得する
+    $connection = ArticleTable::getInstance()->getConnection();
+
+    // グローバルに使っている接続オブジェクトを取得する
+    $connection = Doctrine_Manager::connection();
+
+    // Doctrine_Connectionクラスのメソッド
+    // getDbh()
+    // getManager()
+    // replace()
+    // delete()
+    // update()
+    // insert()
+    // execute()
+    // fetchAll()
+    // fetchOne()
+    // fetchRow()
+    // fetchArray()
+    // lastInsertId()
+    // beginTransaction()
+    // commit()
+    // rollback()
+
+    // 接続オブジェクトのinsert()メソッドの使用例
+    $table = ArticleTable::getInstance();
+    $conn = $table->getConnection();
+    $conn->insert($table, array(
+      'title' => '記事のタイトル' . $this->makeRandStr(10),
+      'body'  => '本文',
+    ));
+
+    $lastInsertId = $conn->lastInsertId();
+    if ($lastInsertId) {
+      echo $lastInsertId;
+      echo nl2br("\n");
+    }
   }
 }

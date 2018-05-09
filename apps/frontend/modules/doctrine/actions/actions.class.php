@@ -319,6 +319,17 @@ class doctrineActions extends sfActions
       ->execute();
 
     // 6-2-9 ハイドレーション
-    // 本には具体例が無いので、調べて少し載せる
+    // Doctrineでは、SQLを実行して得られる表形式のデータを、該当するレコードクラスなどのオブジェクトに変換する
+    // このようなSQLの実行結果をより使いやすい形に変換する処理のことを、Doctrineではハイドレーションと呼ぶ。
+    // execute()メソッドを実行するときに、第二引数にはハイドレーションを指定することができる。
+    // 例)
+    // - HYDRATE_RECORD
+    //   オブジェクトへのHydration(デフォルト)
+    // - HYDRATE_ARRAY
+    //   階層化された配列へのHydration
+    // - HYDRATE_NONE
+    //   そのままの値
+    //   PDO::FETCH_NUM
+    // 他にもいくらかあるけど、fetchArrayとかがおそらくHYDRAte_ARRAYで返してくれてる
   }
 }

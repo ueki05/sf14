@@ -63,3 +63,21 @@ Page:
                    2010年11月15日に開催した2010年の定期演奏会は、
     created_at:  '2010-12-21 00:00:00'
 
+Article:
+  Article1:
+    title:        'Article 1'
+    body:         'Body 1'
+    published_at: '2018-04-01 00:00:00'
+  Article2:
+    title:        'Article 2'
+    body:         'Body 2'
+    published_at: '2018-04-02 00:00:00'
+  Article3:
+    title:        'Article 3'
+    body:         'Body 3'
+    published_at: '3018-04-03 00:00:00'
+  Article3:
+    title:        'Article 3'
+    body:         'Body 3'
+    published_at: '3018-04-03 00:00:00'
+

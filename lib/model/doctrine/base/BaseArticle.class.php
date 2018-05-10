@@ -8,13 +8,16 @@
  * @property string $title
  * @property string $body
  * @property timestamp $published_at
+ * @property ArticleDetail $ArticleDetail
  * 
- * @method string    getTitle()        Returns the current record's "title" value
- * @method string    getBody()         Returns the current record's "body" value
- * @method timestamp getPublishedAt()  Returns the current record's "published_at" value
- * @method Article   setTitle()        Sets the current record's "title" value
- * @method Article   setBody()         Sets the current record's "body" value
- * @method Article   setPublishedAt()  Sets the current record's "published_at" value
+ * @method string        getTitle()         Returns the current record's "title" value
+ * @method string        getBody()          Returns the current record's "body" value
+ * @method timestamp     getPublishedAt()   Returns the current record's "published_at" value
+ * @method ArticleDetail getArticleDetail() Returns the current record's "ArticleDetail" value
+ * @method Article       setTitle()         Sets the current record's "title" value
+ * @method Article       setBody()          Sets the current record's "body" value
+ * @method Article       setPublishedAt()   Sets the current record's "published_at" value
+ * @method Article       setArticleDetail() Sets the current record's "ArticleDetail" value
  * 
  * @package    sf14
  * @subpackage model
@@ -44,6 +47,10 @@ abstract class BaseArticle extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('ArticleDetail', array(
+             'local' => 'id',
+             'foreign' => 'article_id'));
+
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

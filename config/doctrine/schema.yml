@@ -28,3 +28,14 @@ Article:
       notnull:  true
     published_at:
       type: timestamp
+
+ArticleDetail:
+  columns:
+    article_id:     integer
+    article_option: string(1000)
+  relations:
+    Article:
+      local:          article_id
+      type:           one
+      foreign:        id
+      foreignType:    one

@@ -46,3 +46,6 @@ doctrine_doctrine_query:
   url:    /doctrine/doctrine_query
   param:  { module: Doctrine, action: DoctrineQuery }
 
+doctrine_relation:
+  url:    /doctrine/relation
+  param:  { module: Doctrine, action: relation }

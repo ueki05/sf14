@@ -76,8 +76,22 @@ Article:
     title:        'Article 3'
     body:         'Body 3'
     published_at: '3018-04-03 00:00:00'
-  Article3:
-    title:        'Article 3'
-    body:         'Body 3'
+  Article4:
+    title:        'Article 4'
+    body:         'Body 4'
     published_at: '3018-04-03 00:00:00'
+
+ArticleDetail:
+  Detail1:
+    Article:        'Article1'
+    article_option: 'option 1'
+  Detail2:
+    Article:        'Article2'
+    article_option: 'option 2'
+  Detail3:
+    Article:        'Article3'
+    article_option: 'option 3'
+  Detail4:
+    Article:        'Article4'
+    article_option: 'option 4'
 

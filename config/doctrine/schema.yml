@@ -39,3 +39,15 @@ ArticleDetail:
       type:           one
       foreign:        id
       foreignType:    one
+
+Comment:
+  columns:
+    article_id:          integer
+    body:           string(1000)
+  relations:
+    Article:
+      local:        article_id
+      type:         one
+      foreign:      id
+      foreignType:  many
+

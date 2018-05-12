@@ -9,15 +9,18 @@
  * @property string $body
  * @property timestamp $published_at
  * @property ArticleDetail $ArticleDetail
+ * @property Doctrine_Collection $Comment
  * 
- * @method string        getTitle()         Returns the current record's "title" value
- * @method string        getBody()          Returns the current record's "body" value
- * @method timestamp     getPublishedAt()   Returns the current record's "published_at" value
- * @method ArticleDetail getArticleDetail() Returns the current record's "ArticleDetail" value
- * @method Article       setTitle()         Sets the current record's "title" value
- * @method Article       setBody()          Sets the current record's "body" value
- * @method Article       setPublishedAt()   Sets the current record's "published_at" value
- * @method Article       setArticleDetail() Sets the current record's "ArticleDetail" value
+ * @method string              getTitle()         Returns the current record's "title" value
+ * @method string              getBody()          Returns the current record's "body" value
+ * @method timestamp           getPublishedAt()   Returns the current record's "published_at" value
+ * @method ArticleDetail       getArticleDetail() Returns the current record's "ArticleDetail" value
+ * @method Doctrine_Collection getComment()       Returns the current record's "Comment" collection
+ * @method Article             setTitle()         Sets the current record's "title" value
+ * @method Article             setBody()          Sets the current record's "body" value
+ * @method Article             setPublishedAt()   Sets the current record's "published_at" value
+ * @method Article             setArticleDetail() Sets the current record's "ArticleDetail" value
+ * @method Article             setComment()       Sets the current record's "Comment" collection
  * 
  * @package    sf14
  * @subpackage model
@@ -48,6 +51,10 @@ abstract class BaseArticle extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasOne('ArticleDetail', array(
+             'local' => 'id',
+             'foreign' => 'article_id'));
+
+        $this->hasMany('Comment', array(
              'local' => 'id',
              'foreign' => 'article_id'));
 

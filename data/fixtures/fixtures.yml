@@ -95,3 +95,17 @@ ArticleDetail:
     Article:        'Article4'
     article_option: 'option 4'
 
+Comment:
+  Comment1:
+    Article:        'Article1'
+    body:           'body 1'
+  Comment2:
+    Article:        'Article2'
+    body:           'body 2'
+  Comment3_1:
+    Article:        'Article3'
+    body:           'body 3_1'
+  Comment3_2:
+    Article:        'Article3'
+    body:           'body 3_2'
+

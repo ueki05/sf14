@@ -50,4 +50,5 @@ Comment:
       type:         one
       foreign:      id
       foreignType:  many
+      foreignAlias: Comments
 

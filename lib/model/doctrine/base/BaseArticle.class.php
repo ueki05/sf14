@@ -9,18 +9,18 @@
  * @property string $body
  * @property timestamp $published_at
  * @property ArticleDetail $ArticleDetail
- * @property Doctrine_Collection $Comment
+ * @property Doctrine_Collection $Comments
  * 
  * @method string              getTitle()         Returns the current record's "title" value
  * @method string              getBody()          Returns the current record's "body" value
  * @method timestamp           getPublishedAt()   Returns the current record's "published_at" value
  * @method ArticleDetail       getArticleDetail() Returns the current record's "ArticleDetail" value
- * @method Doctrine_Collection getComment()       Returns the current record's "Comment" collection
+ * @method Doctrine_Collection getComments()      Returns the current record's "Comments" collection
  * @method Article             setTitle()         Sets the current record's "title" value
  * @method Article             setBody()          Sets the current record's "body" value
  * @method Article             setPublishedAt()   Sets the current record's "published_at" value
  * @method Article             setArticleDetail() Sets the current record's "ArticleDetail" value
- * @method Article             setComment()       Sets the current record's "Comment" collection
+ * @method Article             setComments()      Sets the current record's "Comments" collection
  * 
  * @package    sf14
  * @subpackage model
@@ -54,7 +54,7 @@ abstract class BaseArticle extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'article_id'));
 
-        $this->hasMany('Comment', array(
+        $this->hasMany('Comment as Comments', array(
              'local' => 'id',
              'foreign' => 'article_id'));
 

@@ -7,7 +7,7 @@ class relationAction extends sfAction
     // 6-5-1 一対一のリレーション
     // リレーション先のオブジェクトの取得と保存
     // Articleを取得し、その後関連付けられているArticleDetailを取得
-    $article = ArticleTable::getInstance()->find(9);
+    $article = ArticleTable::getInstance()->find(1);
     $articleDetail = $article->getArticleDetail();
     echo $articleDetail->getArticleOption();
 
@@ -16,5 +16,16 @@ class relationAction extends sfAction
     // :
     $article->setArticleDetail($newArticleDetail);
     $article->save();
+
+    // 6-5-2 一対多のリレーション
+    $articleComments = $article->getComments();
+    foreach ($articleComments as $articleComment) {
+      echo $articleComment->getBody();
+    }
+
+    $newComment = new Comment();
+    $newComment->setArticle($article);
+    $newComment->setbody('new body');
+    $newComment->save();
   }
 }

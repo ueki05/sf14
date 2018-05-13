@@ -8,17 +8,20 @@
  * @property string $title
  * @property string $body
  * @property timestamp $published_at
+ * @property Doctrine_Collection $Tags
  * @property ArticleDetail $ArticleDetail
  * @property Doctrine_Collection $Comments
  * 
  * @method string              getTitle()         Returns the current record's "title" value
  * @method string              getBody()          Returns the current record's "body" value
  * @method timestamp           getPublishedAt()   Returns the current record's "published_at" value
+ * @method Doctrine_Collection getTags()          Returns the current record's "Tags" collection
  * @method ArticleDetail       getArticleDetail() Returns the current record's "ArticleDetail" value
  * @method Doctrine_Collection getComments()      Returns the current record's "Comments" collection
  * @method Article             setTitle()         Sets the current record's "title" value
  * @method Article             setBody()          Sets the current record's "body" value
  * @method Article             setPublishedAt()   Sets the current record's "published_at" value
+ * @method Article             setTags()          Sets the current record's "Tags" collection
  * @method Article             setArticleDetail() Sets the current record's "ArticleDetail" value
  * @method Article             setComments()      Sets the current record's "Comments" collection
  * 
@@ -50,6 +53,11 @@ abstract class BaseArticle extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('Tag as Tags', array(
+             'refClass' => 'ArticleTag',
+             'local' => 'article_id',
+             'foreign' => 'tag_id'));
+
         $this->hasOne('ArticleDetail', array(
              'local' => 'id',
              'foreign' => 'article_id'));

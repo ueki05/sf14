@@ -80,6 +80,14 @@ Article:
     title:        'Article 4'
     body:         'Body 4'
     published_at: '3018-04-03 00:00:00'
+  Article_tag_1:
+    title:        symfonyでDoctrineを使う方法(1)
+    body:         本文テスト
+    Tags:         [ tag_pg, tag_symfony ]
+  Article_tag_2:
+    title:        プロフェッショナルなプログラマーについて
+    body:         本文テスト2
+    Tags:         [ tag_pg ]
 
 ArticleDetail:
   Detail1:
@@ -108,4 +116,10 @@ Comment:
   Comment3_2:
     Article:        'Article3'
     body:           'body 3_2'
+
+Tag:
+  tag_pg:
+    body:       プログラミング関連
+  tag_symfony:
+    body:       symfony関連
 

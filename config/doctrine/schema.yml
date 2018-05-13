@@ -28,6 +28,11 @@ Article:
       notnull:  true
     published_at:
       type: timestamp
+  relations:
+    Tag:
+      class:    Tag
+      refClass: ArticleTag
+      alias:    Tags
 
 ArticleDetail:
   columns:
@@ -51,4 +56,17 @@ Comment:
       foreign:      id
       foreignType:  many
       foreignAlias: Comments
+
+Tag:
+  columns:
+    body: string(1000)
+
+ArticleTag:
+  columns:
+    article_id:
+      type:     integer
+      primary:  true
+    tag_id:
+      type:     integer
+      primary:  true
 

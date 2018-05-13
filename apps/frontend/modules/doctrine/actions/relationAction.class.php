@@ -27,5 +27,24 @@ class relationAction extends sfAction
     $newComment->setArticle($article);
     $newComment->setbody('new body');
     $newComment->save();
+
+    // 6-5-3 多対多のリレーション
+    $article = ArticleTable::getInstance()
+      ->findOneByTitle('symfonyでDoctrineを使う方法(1)');
+
+    $tags = $article->getTags();
+
+    echo count($tags);
+    foreach ($tags as $tag) {
+      echo $tag->getBody();
+    }
+
+    $newTag = new Tag();
+    $newTag->setBody('new tag');
+
+    $tags->add($newTag);
+    $article->setTags($tags);
+    $article->save();
+
   }
 }
